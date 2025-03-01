@@ -11,14 +11,13 @@ Este proyecto implementa un registro de usuarios siguiendo los principios de Dom
 
 1. Clonar el repositorio:
 ```bash
-git clone https://github.com/angelsosa91/user-register-ddd-test.git
-cd user-register-ddd-test
+git clone https://github.com/angelsosa91/php-ddd-test.git
+cd php-ddd-test
 ```
 
 2. Iniciar el proyecto usando Make:
 ```bash
 make init
-make db-migrate
 ```
 
 o manualmente paso a paso:
@@ -165,22 +164,25 @@ Respuesta error (400 Bad Request)
 
 ## Pruebas
 
-Para ejecutar todas las pruebas:
+Para ejecutar todas las pruebas (Sin MySQL):
 
 ```bash
 make test
 ```
 
-Para ejecutar solo las pruebas unitarias:
-
+Ejecutar solo las pruebas unitarias
 ```bash
-docker-compose exec php vendor/bin/phpunit --testsuite=Unit
+make test-unit
 ```
 
-Para ejecutar solo las pruebas de integración:
-
+Ejecutar solo las pruebas de integración (sin MySQL)
 ```bash
-docker-compose exec php vendor/bin/phpunit --testsuite=Integration
+make test-integration
+```
+
+Ejecutar las pruebas específicas de MySQL
+```bash
+make test-mysql
 ```
 
 ## Notas de Implementación
