@@ -6,7 +6,6 @@ namespace App\Application\UseCase\User;
 
 use App\Application\DTO\Request\RegisterUserRequest;
 use App\Application\DTO\Response\UserResponseDTO;
-use App\Domain\Event\User\UserRegisteredEvent;
 use App\Domain\Model\User\ValueObject\Email;
 use App\Domain\Model\User\Exception\UserAlreadyExistsException;
 use App\Domain\Model\User\ValueObject\Name;
