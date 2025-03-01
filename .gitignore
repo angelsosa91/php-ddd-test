@@ -18,5 +18,8 @@ composer.lock
 # Archivos de Docker
 *.log
 
+# Volumen Mysql Docker
+/docker/mysql/data/*
+
 # Archivos generados por pruebas
 .phpunit.result.cache
