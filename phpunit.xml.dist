@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         colors="true"
+         cacheResult="false"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true">
+
+    <testsuites>
+        <testsuite name="Unit">
+            <directory>tests/Unit</directory>
+        </testsuite>
+        <testsuite name="Integration">
+            <directory>tests/Integration</directory>
+            <exclude>tests/Integration/Infrastructure/Persistence/Doctrine/Repository/DoctrineUserMySQLRepositoryTest.php</exclude>
+        </testsuite>
+        <testsuite name="MySQL">
+            <file>tests/Integration/Infrastructure/Persistence/Doctrine/Repository/DoctrineUserMySQLRepositoryTest.php</file>
+        </testsuite>
+    </testsuites>
+
+    <coverage processUncoveredFiles="true">
+        <include>
+            <directory suffix=".php">src</directory>
+        </include>
+    </coverage>
+
+    <php>
+        <env name="APP_ENV" value="test"/>
+        <env name="TEST_DB_HOST" value="mysql"/>
+        <env name="TEST_DB_PORT" value="3306"/>
+        <env name="TEST_DB_USER" value="app_user"/>
+        <env name="TEST_DB_PASSWORD" value="app_password"/>
+        <env name="TEST_DB_NAME" value="app_test_db"/>
+    </php>
+
+    <groups>
+        <exclude>
+            <group>mysql</group>
+        </exclude>
+    </groups>
+</phpunit>

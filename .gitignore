@@ -1,0 +1,26 @@
+# Dependencias de Composer
+/vendor/
+composer.lock
+
+# Archivos de configuración local que pueden contener información sensible
+#.env
+
+# Archivos y directorios generados por IDE/editores
+.idea/
+.vscode/
+*.sublime-*
+*.swp
+*.swo
+
+# Caché y logs
+/var/
+
+# Archivos de Docker
+*.log
+data/
+
+# Volumen Mysql Docker
+/docker/mysql/data/*
+
+# Archivos generados por pruebas
+.phpunit.result.cache
